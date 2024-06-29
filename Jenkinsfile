@@ -1,31 +1,33 @@
 pipeline {
     agent any
 
+    environment {
+        GIT_REPO_URL = 'https://github.com/mrpremprakash/node-apps.git'
+        GIT_BRANCH = 'main'
+        TARGET_DIR = '/Users/premprakash/Desktop/projects/node-apps/deploymentWithJenkisfile'
+    }
     stages {
         stage('Checkout') {
             steps {
-                // Pull code from GitHub repository
-                git url: 'https://github.com/mrpremprakash/node-apps.git', branch: 'main'
+                script {
+                    // Clone the repository into the specified directory
+                    dir("${env.TARGET_DIR}") {
+                        git branch: "${env.GIT_BRANCH}", url: "${env.GIT_REPO_URL}"
+                    }
+                }
             }
         }
         stage('Install Dependencies') {
             steps {
-                // Install Node.js dependencies
-                sh 'npm install'
+                script {
+                    // Change to the specified directory and install dependencies
+                    dir("${env.TARGET_DIR}") {
+                        sh 'npm install'
+                        sh 'npm start'
+                    }
+                }
             }
         }
-        stage('Start') {
-            steps {
-                // Run the build script
-                sh 'npm start'
-            }
-        }
-        // stage('Test') {
-        //     steps {
-        //         // Run tests
-        //         sh 'npm test'
-        //     }
-        // }
     }
 
     post {
