@@ -2,7 +2,9 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/opt/homebrew/bin/"
+        NODEJS_HOME = '/opt/homebrew/bin/'
+        SH_HOME = "/bin/sh"
+        PATH = "${NODEJS_HOME}:${SH_HOME}:${env.PATH}"
         GIT_REPO_URL = 'https://github.com/mrpremprakash/node-apps.git'
         GIT_BRANCH = 'main'
         TARGET_DIR = '/Users/premprakash/Desktop/projects/node-apps/deploymentWithJenkisfile'
@@ -24,6 +26,15 @@ pipeline {
                     // Change to the specified directory and install dependencies
                     dir("${env.TARGET_DIR}") {
                         sh 'npm install'
+                    }
+                }
+            }
+        }
+        stage('Start node server') {
+            steps {
+                script {
+                    // Change to the specified directory and run the build script
+                    dir("${env.TARGET_DIR}") {
                         sh 'npm start'
                     }
                 }
