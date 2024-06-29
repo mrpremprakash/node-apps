@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        PATH = "/opt/homebrew/bin/"
         GIT_REPO_URL = 'https://github.com/mrpremprakash/node-apps.git'
         GIT_BRANCH = 'main'
         TARGET_DIR = '/Users/premprakash/Desktop/projects/node-apps/deploymentWithJenkisfile'
