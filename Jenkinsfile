@@ -4,7 +4,8 @@ pipeline {
     environment {
         NODEJS_HOME = '/opt/homebrew/bin/'
         SH_HOME = "/bin/sh"
-        PATH = "${NODEJS_HOME}:${SH_HOME}:${env.PATH}"
+        NOHUP_HOME = "/usr/bin/nohup"
+        PATH = "${NODEJS_HOME}:${SH_HOME}:${NOHUP_HOME}:${env.PATH}"
         GIT_REPO_URL = 'https://github.com/mrpremprakash/node-apps.git'
         GIT_BRANCH = 'main'
         TARGET_DIR = '/Users/premprakash/Desktop/projects/node-apps/deploymentWithJenkisfile'
@@ -35,7 +36,7 @@ pipeline {
                 script {
                     // Change to the specified directory and run the build script
                     dir("${env.TARGET_DIR}") {
-                        sh 'npm start'
+                        sh 'nohup npm start > node_app.log 2>&1 &'
                     }
                 }
             }
