@@ -16,5 +16,15 @@ router.get("/", (req, res) => {
       });
     });
 });
+router.get('/:id', (req, res) => {
+  log.info("Get user by ID request received, fetching user by id:"+req.params.id);
+  fetch(`${apiPath}users/${req.params.id}`).then(res => res.json()).then(data => {
+    log.error(`Get user by ID: ${req.params.id} request completed`);
+    res.send({
+      message: "User by id",
+      user: data
+    })
+  });
+})
 
 module.exports = router;

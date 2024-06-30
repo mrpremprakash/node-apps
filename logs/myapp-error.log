@@ -6,3 +6,8 @@
 {"name":"myapp","hostname":"Prems-Mac-mini.local","pid":2865,"level":50,"msg":"Logging code initialized...","time":"2024-06-30T07:07:24.017Z","v":0}
 {"name":"myapp","hostname":"Prems-Mac-mini.local","pid":2870,"level":50,"msg":"Logging code initialized...","time":"2024-06-30T07:07:53.723Z","v":0}
 {"name":"myapp","hostname":"Prems-Mac-mini.local","pid":2871,"level":50,"msg":"Logging code initialized...","time":"2024-06-30T07:08:13.697Z","v":0}
+{"name":"myapp","hostname":"Prems-Mac-mini.local","pid":3745,"level":50,"msg":"Logging code initialized...","time":"2024-06-30T10:15:29.451Z","v":0}
+{"name":"myapp","hostname":"Prems-Mac-mini.local","pid":3757,"level":50,"msg":"Logging code initialized...","time":"2024-06-30T10:17:33.718Z","v":0}
+{"name":"myapp","hostname":"Prems-Mac-mini.local","pid":3757,"level":50,"msg":"Get users request completed, total users: 10","time":"2024-06-30T10:17:40.854Z","v":0}
+{"name":"myapp","hostname":"Prems-Mac-mini.local","pid":3777,"level":50,"msg":"Logging code initialized...","time":"2024-06-30T10:18:25.431Z","v":0}
+{"name":"myapp","hostname":"Prems-Mac-mini.local","pid":3788,"level":50,"msg":"Logging code initialized...","time":"2024-06-30T10:19:06.051Z","v":0}
