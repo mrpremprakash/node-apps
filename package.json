@@ -11,6 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "bunyan": "^1.8.15",
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0"
   }
 }
